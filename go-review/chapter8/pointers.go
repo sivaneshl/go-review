@@ -7,7 +7,7 @@ import (
 
 func zero(xPtr *int) {
     *xPtr = 0
-    fmt.Println(reflect.TypeOf(xPtr))
+    // fmt.Println(reflect.TypeOf(xPtr))
 
 }
 
