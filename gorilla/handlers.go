@@ -18,6 +18,7 @@ func ToDoIndex(w http.ResponseWriter, r *http.Request) {
 	todos := ToDos{
 		ToDo{Name: "Write Presentation"},
 		ToDo{Name: "Host Meeting"},
+		ToDo{Name: "Call VP"},
 	}
 
 	json.NewEncoder(w).Encode(todos)
