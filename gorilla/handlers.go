@@ -8,10 +8,12 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Index ...
 func Index(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Welcome!")
 }
 
+// ToDoIndex ...
 func ToDoIndex(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "To Do Index!")
 
@@ -24,8 +26,9 @@ func ToDoIndex(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(todos)
 }
 
+// ToDoShow ...
 func ToDoShow(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	todoId := vars["todoId"]
-	fmt.Fprintln(w, "To Do Show: ", todoId)
+	todoID := vars["todoId"]
+	fmt.Fprintln(w, "To Do Show: ", todoID)
 }
