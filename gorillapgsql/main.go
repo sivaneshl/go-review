@@ -5,7 +5,7 @@ package main
 func main() {
 
 	a := App{}
-	a.Initialize("admin", "admin", "testdb")
+	a.Initialize("postgres", "admin", "testdb")
 	a.Run(":8080")
 
 }

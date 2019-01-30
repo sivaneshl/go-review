@@ -150,7 +150,7 @@ func ensureTableExists() {
 }
 
 func clearTable() {
-	a.DB.Exec("DELETE * FROM products")
+	a.DB.Exec("DELETE FROM products")
 	a.DB.Exec("ALTER SEQUENCE products_id_seq RESTART WITH 1")
 }
 
@@ -163,7 +163,7 @@ func executeRequest(req *http.Request) *httptest.ResponseRecorder {
 
 func checkResponseCode(t *testing.T, expected, actual int) {
 	if expected != actual {
-		t.Errorf("Expected respomse code %d. Got %d", expected, actual)
+		t.Errorf("Expected response code %d. Got %d", expected, actual)
 	}
 }
 
@@ -173,7 +173,7 @@ func addProducts(count int) {
 	}
 
 	for i := 0; i < count; i++ {
-		a.DB.Exec("INSERT INTO products(name,price) VALUES($1,$2)", "Product_"+strconv.Itoa(i), (i+1.0)*10)
+		a.DB.Exec("INSERT INTO products(name, price) VALUES($1, $2)", "Product_"+strconv.Itoa(i), (i+1.0)*10)
 	}
 }
 
